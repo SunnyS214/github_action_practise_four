@@ -14,6 +14,7 @@ if (r1 === 55) {
 } else {
     console.log('test fail hau')
     fail++
+    process.exit(1)
 }
 
 
@@ -23,6 +24,7 @@ if (r2 === 30) {
 } else {
     console.log('test fail hau')
     fail++
+    process.exit(1)
 }
 
 if (r3 === 60) {
@@ -31,6 +33,7 @@ if (r3 === 60) {
 } else {
     console.log('test fail hau')
     fail++
+    process.exit(1)
 }
 
 
@@ -48,6 +51,7 @@ if (r4 === 50) {
 } else {
     console.log('test fail hau')
     fail++
+    process.exit(1)
 }
 
 
@@ -58,6 +62,7 @@ if (r5 === 4) {
 } else {
     console.log('test fail hau')
     fail++
+    process.exit(1)
 }
 
 
@@ -68,6 +73,7 @@ if (r6 === 10) {
 } else {
     console.log(' r6:test fail hau')
     fail++
+    process.exit(1)
 }
 
 
