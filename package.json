@@ -1,0 +1,7 @@
+{
+    "name": "node js test",
+    "main":"app.js",
+    "scripts": {
+        "test": "node test.js"
+    }
+}
