@@ -3,7 +3,8 @@ const {add , multi} = require("./app.js")
 let pass=0
 let fail=0
 
-let r1= add(25 ,30)
+let r1= add(25 ,310)
+// let r1= add(25 ,30)
 let r2= add(10,20)
 let r3= add(30,30)
 
