@@ -1,0 +1,105 @@
+name: Pipeline for noe js simple project 
+
+on: 
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+
+jobs:
+    tests:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Code lao for test
+              uses: actions/checkout@v3
+
+            - name: node setup / language setup
+              uses: actions/setup-node@v3
+              with:
+                 node-version: "18"
+            
+            - name: dependeceis install karo
+              run: npm install
+               
+            - name: tests chalao
+              run: npm test
+               
+    build:
+        name: build karo
+        needs: tests
+        runs-on: ubuntu-latest
+        
+        steps:
+            - name: code lao for build
+              uses: actions/checkout@v3
+               
+            - name: node setup / language set up karo
+              uses: actions/setup-node@v3
+              with:
+                node-version: "18"
+                     
+            - name: build karo
+              run: |
+                  echo "=============="
+                  echo "build are starting"
+                  echo "=============="
+                  mkdir -p dist/
+                  cp app.js dist/
+                  cp package.json dist/
+           
+            - name: build verify karo
+              run: |
+                  echo "====Dist Folder===="
+                  ls -la dist/
+                  echo "=============="
+                  
+    
+    deploy:
+        name: Deploy karo
+        runs-on: ubuntu-latest
+
+        needs: build
+        
+        steps:
+            - name: code lao for deploy
+              uses: actions/checkout@v3
+
+            - name: deploy tayari
+              run: |
+                  echo "=============="
+                  echo "deploy are starting"
+                  echo "=============="
+                  echo "server se connect"
+                  echo "purana version backup ho raha hai"
+                  
+            - name: deploy karo
+              run: |
+                  echo "=============="
+                  echo "naya code ja raha hai"
+                  echo "health check ho raha hai"
+                  echo "=============="
+                  echo "deploy complete"
+                  echo "=============="
+                  
+
+            - name: notify karo
+              run: |
+                  echo "=============="
+                  echo "team ko noftify kar rahe hai"
+                  echo "deploy kiya : $GITHUB_ACTOR"
+                  echo "Commit       : $GITHUB_SHA"
+                  echo "Commit       : SUCCESS 💯"
+                  echo "=============="
+                  
+                        
+                  
+                  
+                  
+                  
+                #   mkdir -p dist/
+                #   cp app.js dist/
+                #   cp package.json dist/
+           
+
+              
